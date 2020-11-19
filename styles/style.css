@@ -15,9 +15,49 @@ nav {
     background-color: #17231f;
 }
 
-main {
+#header-title {
+    padding-top: 100px;
+    font-family: serif;
+    font-size: 3cm;
+    color: whitesmoke;
+}
+
+#header-subtitle {
+    padding-bottom: 100px;
+    margin-top: -5%;
+    font-family: serif;
+    font-size: xx-large;
+    color: whitesmoke;
+}
+
+#footer-text {
+    font-family: monospace;
+    color: white;
+    margin-top: 0%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'my-header'
+                         'my-main'
+                         'my-footer';
+}
+
+.my-header {
+    grid-area: my-header;
+}
+
+.my-main {
+    grid-area: my-main;
     display: flex;
-    margin-top: -32px;
+}
+
+.my-footer {
+    background-color: #17231f;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    grid-area: my-footer;
 }
 
 .nav-list {
@@ -60,6 +100,10 @@ main {
 .nav-list li a:hover {
     color: goldenrod;
     text-decoration-line: underline;
+}
+
+.logo-image {
+    width: 150px;
 }
 
 .header-div {
@@ -117,19 +161,25 @@ main {
     }
 }
 
-#header-title {
-    padding-top: 100px;
-    font-family: serif;
-    font-size: 3cm;
-    color: whitesmoke;
+.my-border {
+    width: 300px;
+    background-color: #17231f;
 }
 
-#header-subtitle {
-    padding-bottom: 100px;
-    margin-top: -5%;
-    font-family: serif;
-    font-size: xx-large;
-    color: whitesmoke;
+.my-border-radius {
+    border-radius: 10px;
+    box-shadow: 0 0 0 .6em #17231f;
+    overflow: hidden;
+    margin: 0;
+    perspective: 1px;
+}
+
+.sections-div {
+    border-image-slice: 1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .my-section {
@@ -161,43 +211,26 @@ main {
     text-shadow: 1px 1px 2px #082b34;
 }
 
-.destinations-list {
-    font-family: sans-serif;
-    text-decoration: none;
-    font-weight: bold;
+.articles-section {
+    display: flex;
+    flex-direction: column;
 }
 
-.destinations-list li {
-    margin-top: 20px;
-    margin-left: -55px;
-    text-decoration: none;
-    list-style: none;
-}
 
-.destinations-list li a {
-    text-decoration: none;
-}
-
-.images {
-    margin: auto;
-    display: block;
-    padding: 20px;
-    width: 800px;
+.content-section-heading {
+    text-align: center;
+    font-family: "Playfair Display";
+    padding-bottom: 50px;
+    text-shadow: 1px 1px 2px #082b34;
+    font-size: 30px;
 }
 
 .my-article {
-    padding: 50px;
-    background-color: gainsboro;
-    border: 10px solid;
-    border-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
-    border-image-slice: 1;
-    font-size: larger;
+    display: flex;
 }
 
-.my-border-radius {
-    border-radius: 30px;
-    overflow: hidden;
-    perspective: 1px;
+.my-article:nth-of-type(even) {
+    flex-direction: row-reverse;
 }
 
 .article-title {
@@ -217,11 +250,16 @@ main {
     color: grey;
 }
 
-.my-footer {
-    background-color: #17231f;
-    text-align: center;
-    margin: 0 auto;
-    position: relative;
+.article-image {
+    width: 400px;
+    object-fit: cover;
+    padding: 10px;
+    flex: 4;
+}
+
+.article-text-content {
+    padding: 10px;
+    flex: 2;
 }
 
 .my-span {
@@ -229,12 +267,36 @@ main {
     font-weight: bold;
 }
 
-#footer-image {
-    width: 150px;
+.destinations-list {
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-#footer-text {
-    font-family: monospace;
-    color: white;
-    margin-top: 0%;
+.destinations-list li {
+    margin-top: 20px;
+    margin-left: -55px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.destinations-list li a {
+    text-decoration: none;
+}
+
+.my-destinations {
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.destinations-text-content {
+    flex: 5;
+    padding: 10px;
+}
+
+.images {
+    width: 100px;
+    padding: 10px;
+    flex: 1;
+    object-fit: cover;
 }
