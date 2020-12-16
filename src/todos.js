@@ -6,14 +6,18 @@ import "./todo.js"
 
 class TODOS extends LitElement {
     static get styles() {
-        return css
-            `
-
+        return css`
+                #submitButton {
+                    margin-left: 47px;
+                    margin-top: 10px;
+                    display: block;
+                }
             `;
     }
     
     static get properties() {
         return {
+            id: { type: Number },
             todos: { type: Array },
             title: { type: String }
         }
@@ -36,16 +40,50 @@ class TODOS extends LitElement {
     }
     
     render() {
-        return html
-            `
+        return html`
                 <h2>${ this.title }</h2>
+                <form @submit="${ this.handleAddedTodo }">
+                    <input name="newTodo" id="newTodo" type="text" placeholder="new todo">
+                    <input id="submitButton" type="submit" value="Add TODO">
+                </form>
                 <ul style="list-style-type:none;">
-                    ${this.todos.map((todo) => {
+                    ${this.todos.map((todo, index) => {
                         return html`
-                            <my-todo .title="${ todo.title }" .done=${ todo.done }></my-todo>`;
+                            <my-todo .id="${ index }" .title="${ todo.title }" .done=${ todo.done }
+                                    @checkboxClickEvent="${ this.handleCheckboxClickEvent }"
+                                    @todoUpdateTitle="${ this.handleTodoUpdateTitle }">
+                            </my-todo>`;
                     })}
                 </ul>
             `;
+    }
+
+    handleCheckboxClickEvent(event) {
+        const id = event.detail.id;
+        const done = event.detail.done;
+
+        let newTodos = [...this.todos];
+        newTodos[id].done = done;
+        this.todos = newTodos;
+    }
+
+    handleAddedTodo(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        this.todos = [...this.todos, {
+            title: formData.get("newTodo"),
+            done: false
+        }];
+    }
+
+    handleTodoUpdateTitle(event) {
+        const title = event.detail.title;
+        const id = event.detail.id;
+
+        let newTodos = [...this.todos];
+        newTodos[id].title = title;
+        this.todos = newTodos;
     }
 }
 

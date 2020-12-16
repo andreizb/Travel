@@ -4,45 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Travazy</title>
+    <base href="/">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="images/travazy.png">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Playfair+Display">
 </head>
 <body>
-    <div class="grid-container">
-        <app-header class="my-header"></app-header>
-        <main class="my-main">
-            <div class="my-border"></div>
-            <div class="my-border-radius">
-                <div class="sections-div">
-                    <section class="my-section">
-                        <h2>
-                            About Travazy
-                        </h2>
-                        <p style="color: rgb(48, 30, 30)">
-                            <span class="my-span">Nunc laoreet a mi at efficitur. Fusce et condimentum purus.</span> Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras dui leo, tincidunt in varius egestas, cursus vel nibh. Vestibulum et nibh non metus congue ornare. Fusce tincidunt sem ac ex vestibulum, vitae placerat lectus tincidunt. Fusce ut luctus diam, eu dapibus urna. Etiam bibendum est vitae ex efficitur pellentesque. Phasellus luctus dolor vel tempor volutpat. Nunc luctus mollis massa aliquet sagittis. Sed condimentum, risus et tempus blandit, mi leo dignissim nibh, non fermentum tortor magna nec diam. Sed luctus lacus sed ipsum consequat pharetra.
-                        </p>
-                    </section>
-                    <article-posts></article-posts>
-                </div>
-            </div>
-            <div class="my-border"></div>
-        </main>
-        <div id="google_translate_element">
-            <script type="text/javascript">  
-                function googleTranslateElementInit() {  
-                    new google.translate.TranslateElement( 
-                        {pageLanguage: 'en'},  
-                        'google_translate_element' 
-                    );  
-                }
-            </script>
-            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>  
-        </div>
-        <app-footer class="my-footer"></app-footer>
-    </div>
-    <script type="module" src="src/app_header.js"></script>
-    <script type="module" src="src/app_footer.js"></script>
-    <script type="module" src="src/article_posts.js"></script>
+    <div id="outlet"></div>
 </body>
 </html>

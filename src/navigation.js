@@ -16,10 +16,10 @@ class Navigation extends HTMLElement {
                 <div style="margin-right: 30px;">
                     <ul class="nav-list">
                         <li>
-                            <a href="index.html">HOME</a>
+                            <a href="/home">HOME</a>
                         </li>
                         <li>
-                            <a href="destinations.html">DESTINATIONS</a>
+                            <a href="/destinations">DESTINATIONS</a>
                         </li>
                         <li>
                             <a href="#google_translate_element">LANGUAGE</a>
@@ -38,7 +38,6 @@ class Navigation extends HTMLElement {
     }
 
     updateStyle(element) {
-        console.log('merge');
         const style = element.shadowRoot.querySelector('style');
         style.innerHTML =
             `
@@ -102,20 +101,20 @@ class Navigation extends HTMLElement {
             `;
     }
 
-    connectedCallback() {
-        console.log('hello from connected callback');
-    }
+    // connectedCallback() {
+    //     console.log('hello from connected callback');
+    // }
 
-    disconnectedCallback() {
-        console.log('hello from disconnected callback');
-    }
+    // disconnectedCallback() {
+    //     console.log('hello from disconnected callback');
+    // }
 
-    adoptedCallback() {
-        console.log('hello from adopted callback');
-    }
+    // adoptedCallback() {
+    //     console.log('hello from adopted callback');
+    // }
 
     attributeChangedCallback(name, oldVal, newVal) {
-        console.log('changed color', name, oldVal, newVal);
+        // console.log('changed color', name, oldVal, newVal);
         this.updateStyle(this);
     }
 }

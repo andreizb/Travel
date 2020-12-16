@@ -1,11 +1,10 @@
 import {
     LitElement, html, css
-} from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module';
+} from 'lit-element';
 
 class AppFooter extends LitElement {
     static get styles() {
-        return css
-            `
+        return css`
                 :root {
                     --background:  #17231f;
                 }
@@ -35,8 +34,7 @@ class AppFooter extends LitElement {
     }
 
     render() {
-        return html
-            `
+        return html`
                 <div>
                     <picture>
                         <img src="images/travazy.png" alt="travazy-logo" class='logo-image'>
